@@ -37,12 +37,12 @@
              {% if img != 0 %}
              <div  class="jumbotron">
              <div id=img1>
-                <p>original image</p>
+                <p>Original Image</p>
                 <img src="{{ url_for('static', filename='gray.png') }}"  height="30%">
              </div>
     
              <div id='img2'>      
-                <p>encoded image</p>
+                <p>Encoded Image</p>
                 <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
                 <a class="btn btn-danger btn-lg" href="{{ url_for('static', filename='enimg.tiff') }}">Download Encoded Image</a>
              </div>
@@ -56,14 +56,14 @@
             <form action = "{{url_for('dei')}}" method = "POST" enctype = "multipart/form-data" id='form'>
                <p class='fi'>Supported format: .tiff</p>
                <input type = "file" name = "file" class='fi'/>
-               <button type = "submit" class="btn btn-primary btn-lg">Submit</button> 
+               <button type = "submit" class="btn btn-warning btn-lg">Submit</button> 
             </form>
    
             {% if img != 0 %}
               <p>encoded image</p>
             <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
                <h2 class="well">{{data}}</h2>
-              <a href="{{ url_for('static', filename='data.txt') }}">CLICK to download data</a>
+              <a class="btn btn-danger btn-lg" href="{{ url_for('static', filename='data.txt') }}">CLICK to download data</a>
             {% endif %}
           </div>
           
