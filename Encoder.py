@@ -6,14 +6,14 @@ from PIL import Image
 
 
 def encod():
-    img = plt.imread("static/gray.tiff")
+    img = plt.imread("static/rbg.tiff")
     ii = Image.fromarray(img)
     ii.save("static/gray.png")
     img = np.array(img)
     # plt.imshow(img)
     # plt.title("Original image")
     # plt.show()
-    img = img.reshape(256 * 256,)
+    img = img.reshape(256 * 256 *4,)
 
     ch = [
         "A",
@@ -101,7 +101,7 @@ def encod():
         e += y[1:]
 
     l = len(e)
-    r = 256 * 256
+    r = 256 * 256 *4
     lsb = e + "0" * (r - l)
 
     for i in range(0, r):
