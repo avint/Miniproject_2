@@ -25,7 +25,7 @@ def op():
 def enc():
     if request.method == "POST":
         m = request.form["inptxt"]
-        f = open("static/data.txt", "w")
+        f = open(r"static/data.txt", "w")
         f.write(m)
         f.close()
         encod()
@@ -36,7 +36,7 @@ def enc():
 def dei():
     if request.method == "POST":
         f = request.files["file"]
-        f.save("static/enimg.tiff")
+        f.save(r"static/enimg.tiff")
         data = decod()
     return render_template("index.html", flag=2, img=1, data=data)
 
