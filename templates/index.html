@@ -14,22 +14,22 @@
          <form action = "{{url_for('op')}}" method = "POST" enctype = "multipart/form-data" id='form'>
              <select  name='option'>
                 <p>select option:</p>
-                <option value="e" >Encrypt Image</option>
-                <option value="d" >Decrypt Image</option>
+                <option value="e" >Encod Image</option>
+                <option value="d" >Decod Image</option>
              </select >
-             <button type = "submit">Submit</button> 
+             <button type = "submit" class="btn btn-primary btn-lg">Submit</button> 
           </form>
        </div>
 
 
           {% if flag==1 %}
           <div class="jumbotron">
-             <form action = "{{url_for('enc')}}" method = "POST">
+             <form class="form-group" action = "{{url_for('enc')}}" method = "POST">
                  <label for="inptxt">Inputdata</label>
-                 <textarea id="inptxt" name="inptxt" rows="4" cols="50">
+                 <textarea class="form-control" id="inptxt" name="inptxt" rows="4" cols="50">
                    </textarea>
-                   <br><br>
-                   <input type="submit" value="Submit">
+                   <br>
+                   <button type = "submit" class="btn btn-primary btn-lg">Submit</button> 
                  </form>
          </div>
  
@@ -42,7 +42,7 @@
              </div>
     
              <div id='img2'>      
-                <p>encrypted image</p>
+                <p>encoded image</p>
                 <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
                 <a href="{{ url_for('static', filename='enimg.tiff') }}">Encoded Image</a>
              </div>
@@ -56,12 +56,14 @@
             <form action = "{{url_for('dei')}}" method = "POST" enctype = "multipart/form-data" id='form'>
                <p class='fi'>Supported format: .tiff</p>
                <input type = "file" name = "file" class='fi'/>
-               <button type = "submit" >Start Convertion</button> 
+               <button type = "submit" class="btn btn-primary btn-lg">Submit</button> 
             </form>
    
             {% if img != 0 %}
+              <p>encoded image</p>
             <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
-               <h2>{{data}}</h2>
+               <h2 class="well">{{data}}</h2>
+              <a href="{{ url_for('static', filename='data.txt') }}">CLICK to download data</a>
             {% endif %}
           </div>
           
