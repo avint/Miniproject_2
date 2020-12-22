@@ -44,7 +44,7 @@
              <div id='img2'>      
                 <p>encoded image</p>
                 <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
-                <a href="{{ url_for('static', filename='enimg.tiff') }}">Encoded Image</a>
+                <a class="btn btn-danger btn-lg" href="{{ url_for('static', filename='enimg.tiff') }}">Download Encoded Image</a>
              </div>
              
              {% endif %}
