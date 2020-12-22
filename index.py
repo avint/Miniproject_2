@@ -38,6 +38,9 @@ def dei():
         f = request.files["file"]
         f.save("static\enimg.tiff")
         data = decod()
+        f = open("static\data.txt", "w")
+        f.write(data)
+        f.close()
     return render_template("index.html", flag=2, img=1, data=data)
 
 
