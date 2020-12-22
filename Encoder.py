@@ -112,7 +112,7 @@ def encod():
         a = a[1:8] + lsb[i]
         img[i] = int(a, 2)
 
-    img = img.reshape(256, 256)
+    img = img.reshape(256, 256,4)
     enc = Image.fromarray(img)
     enc.save("static/enimg.tiff")
     enc.save("static/enimg.png")
