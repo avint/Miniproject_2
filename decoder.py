@@ -3,16 +3,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
-import os
-
 
 def decod():
     img = plt.imread("static/enimg.tiff")
-    os.remove("static/enimg.tiff")
     ii = Image.fromarray(img)
     ii.save("static/enimg.png")
     img = np.array(img)
-    img = img.reshape(256 * 256,)
+    img = img.reshape(256 * 256*4,)
 
     data = ""
     for i in range(0, len(img)):
