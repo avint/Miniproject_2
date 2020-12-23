@@ -62,8 +62,8 @@
             {% if img != 0 %}
               <p>encoded image</p>
             <img src="{{ url_for('static', filename='enimg.png') }}" height="30%">
-               <h2 class="well" id='txt'></h2>
-               <a class="btn btn-primary btn-lg" href="{{ url_for('static', filename='data.txt') }}" download>Download</a>
+               <h2 class="well" style="white-space: pre-wrap;" id='txt'>{{data}}</h2>
+               
             {% endif %}
           </div>
           
@@ -72,18 +72,5 @@
 
         
     </body>
-    <script>
-      var txtFile = new XMLHttpRequest();
-      var allText = "file not found";
-      txtFile.onreadystatechange = function () {
-          if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
-              allText = txtFile.responseText;
-              allText = allText.split("\n").join("<br>");
-          }
-  
-          document.getElementById('txt').innerHTML = allText;
-      }
-      txtFile.open("GET", '../static/data.txt', true);
-      txtFile.send(null);
-    </script>
+
 </html>
