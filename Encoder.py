@@ -86,7 +86,7 @@ def encod():
     print(m)
     e = ""
     m = m.replace(",", "0...0")
-    m = m.replace("?", "0. .0")
+    m = m.replace("@", "0. .0")
     m = m.replace(":", "0 ..0")
     m = m.replace("\n", "0  .0")
     m = m.replace("'", "0.. 0")
