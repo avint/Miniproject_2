@@ -99,7 +99,7 @@ def decod():
     m = m.replace("0.. 0", "'")
     m = m.replace("0  .0", "\n")
     m = m.replace("0 ..0", ":")
-    m = m.replace("0. .0", "?")
+    m = m.replace("0. .0", "@")
     m = m.replace("0...0", ",")
 
     till = m.index("AAA")
